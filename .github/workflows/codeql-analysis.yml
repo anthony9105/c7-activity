@@ -16,4 +16,4 @@ jobs:
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v2 
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v2
+        uses: github/codeql-action/analyze@v1
