@@ -27,3 +27,11 @@ jobs:
         uses: codecov/codecov-action@v2
         with:
             token: ${{ secrets.CODECOV_TOKEN }}  # Add Codecov token as a GitHub secret
+
+      - name: Slack Notification
+        if: failure()
+        uses: slackapi/slack-github-action@v1.16.0
+        with:
+            channel-id: "C0809H4JJ8H"
+            slack-bot-token: ${{ secrets.SLACK_BOT_TOKEN }}
+            text: "GitHub Action failed on ${{ github.repository }} at ${{ github.ref }}"
