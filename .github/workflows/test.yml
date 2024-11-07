@@ -22,3 +22,8 @@ jobs:
 
       - name: Run tests
         run: pytest --cov=app test_app.py  # Run tests with coverage
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v2
+        with:
+            token: ${{ secrets.CODECOV_TOKEN }}  # Add Codecov token as a GitHub secret
